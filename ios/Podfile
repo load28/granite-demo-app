@@ -1,0 +1,81 @@
+# Podfile for iOS with Granite React Native integration (Brownfield)
+
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+platform :ios, '16.0'
+install! 'cocoapods', :deterministic_uuids => false
+
+# Enable dynamic frameworks for better brownfield integration
+# use_frameworks! :linkage => :static
+
+target 'ios' do
+  config = use_native_modules!
+
+  # Configure React Native for brownfield integration
+  use_react_native!(
+    :path => '../node_modules/react-native',
+    :app_path => '../',
+    # Disable Flipper for production brownfield apps
+    :flipper_configuration => FlipperConfiguration.disabled,
+    # Enable Hermes for better performance
+    :hermes_enabled => true,
+    # Use old architecture for better brownfield compatibility
+    :fabric_enabled => false
+  )
+
+  # @granite-js/native에서 사용하는 네이티브 라이브러리들 수동 링킹 (루트 node_modules에서)
+  pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
+  pod 'RNScreens', :path => '../node_modules/react-native-screens' 
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+  pod 'RNSVG', :path => '../node_modules/react-native-svg'
+
+  post_install do |installer|
+    # React Native post install with macOS 15+ compatibility
+    react_native_post_install(
+      installer,
+      :mac_catalyst_enabled => false
+    )
+    
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        # Set minimum deployment target for all pods
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '16.0'
+        
+        # Fix for Xcode 16+ and latest macOS
+        config.build_settings['ENABLE_USER_SCRIPT_SANDBOXING'] = 'NO'
+        
+        # Remove deprecated linker warnings
+        config.build_settings.delete('OTHER_LDFLAGS') if config.build_settings['OTHER_LDFLAGS']&.include?('-ld_classic')
+        
+        # Fix for Xcode 16 bitcode issues
+        config.build_settings['ENABLE_BITCODE'] = 'NO'
+        
+        # Brownfield specific: Allow module map generation
+        config.build_settings['DEFINES_MODULE'] = 'YES'
+        
+        # Fix C++17 compatibility for latest Xcode
+        config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17'
+        config.build_settings['CLANG_CXX_LIBRARY'] = 'libc++'
+      end
+      
+      # Fix shell script build phases for macOS 15+
+      target.build_phases.each do |build_phase|
+        if build_phase.is_a?(Xcodeproj::Project::Object::PBXShellScriptBuildPhase)
+          # Fix realpath compatibility
+          if build_phase.shell_script.include?('realpath -mq')
+            build_phase.shell_script = build_phase.shell_script.gsub('realpath -mq', 'realpath 2>/dev/null || echo')
+          end
+          
+          # Ensure shell script has proper error handling
+          unless build_phase.shell_script.include?('set -e')
+            build_phase.shell_script = "set -e\n#{build_phase.shell_script}"
+          end
+        end
+      end
+    end
+    
+    # Apply Xcode 16 workarounds
+    __apply_Xcode_12_5_M1_post_install_workaround(installer) if defined?(__apply_Xcode_12_5_M1_post_install_workaround)
+  end
+end
