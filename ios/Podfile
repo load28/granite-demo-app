@@ -1,7 +1,7 @@
-# Podfile for iOS with Granite React Native integration (Brownfield)
+# Podfile for iOS with Multiple Granite React Native Apps (Brownfield Monorepo)
 
-require_relative '../node_modules/react-native/scripts/react_native_pods'
-require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+require_relative '../packages/home/node_modules/react-native/scripts/react_native_pods'
+require_relative '../packages/home/node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 platform :ios, '16.0'
 install! 'cocoapods', :deterministic_uuids => false
@@ -10,11 +10,11 @@ install! 'cocoapods', :deterministic_uuids => false
 # use_frameworks! :linkage => :static
 
 target 'ios' do
-  config = use_native_modules!
+  # config = use_native_modules!
 
-  # Configure React Native for brownfield integration
+  # Configure React Native for brownfield integration with monorepo
   use_react_native!(
-    :path => '../node_modules/react-native',
+    :path => '../packages/home/node_modules/react-native',
     :app_path => '../',
     # Disable Flipper for production brownfield apps
     :flipper_configuration => FlipperConfiguration.disabled,
@@ -25,10 +25,10 @@ target 'ios' do
   )
 
   # @granite-js/native에서 사용하는 네이티브 라이브러리들 수동 링킹 (루트 node_modules에서)
-  pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
-  pod 'RNScreens', :path => '../node_modules/react-native-screens' 
-  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
-  pod 'RNSVG', :path => '../node_modules/react-native-svg'
+  pod 'react-native-safe-area-context', :path => '../packages/home/node_modules/react-native-safe-area-context'
+  pod 'RNScreens', :path => '../packages/home/node_modules/react-native-screens' 
+  pod 'RNGestureHandler', :path => '../packages/home/node_modules/react-native-gesture-handler'
+  pod 'RNSVG', :path => '../packages/home/node_modules/react-native-svg'
 
   post_install do |installer|
     # React Native post install with macOS 15+ compatibility

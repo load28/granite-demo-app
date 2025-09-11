@@ -1,24 +1,18 @@
 {
-  "name": "granite-monorepo",
+  "name": "profile",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "dev": "./scripts/dev-start.sh",
-    "dev:home": "yarn workspace home dev",
-    "dev:login": "yarn workspace login dev",
-    "dev:profile": "yarn workspace profile dev",
-    "build": "./scripts/build-all.sh",
-    "build:home": "yarn workspace home build",
-    "build:login": "yarn workspace login build",
-    "build:profile": "yarn workspace profile build",
-    "build:all": "yarn workspaces foreach -p run build",
-    "test": "yarn workspaces foreach -p run test",
-    "typecheck": "yarn workspaces foreach -p run typecheck",
-    "lint": "yarn workspaces foreach -p run lint",
-    "clean": "yarn workspaces foreach -p exec 'rm -rf node_modules dist .granite' && rm -rf node_modules",
-    "ios:pods": "cd ios && pod install"
+    "dev": "granite dev --port 8083",
+    "build": "granite build",
+    "test": "jest --passWithNoTests",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@granite-js/native": "0.1.22",
+    "@granite-js/react-native": "0.1.22",
+    "react": "18.2.0",
+    "react-native": "0.72.6"
   },
   "devDependencies": {
     "@babel/core": "7.23.9",

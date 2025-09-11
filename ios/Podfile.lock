@@ -438,51 +438,51 @@ PODS:
   - Yoga (1.14.0)
 
 DEPENDENCIES:
-  - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
-  - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
-  - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
-  - FBReactNativeSpec (from `../node_modules/react-native/React/FBReactNativeSpec`)
-  - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
-  - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
+  - boost (from `../packages/home/node_modules/react-native/third-party-podspecs/boost.podspec`)
+  - DoubleConversion (from `../packages/home/node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
+  - FBLazyVector (from `../packages/home/node_modules/react-native/Libraries/FBLazyVector`)
+  - FBReactNativeSpec (from `../packages/home/node_modules/react-native/React/FBReactNativeSpec`)
+  - glog (from `../packages/home/node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - hermes-engine (from `../packages/home/node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
   - libevent (~> 2.1.12)
-  - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
-  - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
-  - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
-  - React (from `../node_modules/react-native/`)
-  - React-callinvoker (from `../node_modules/react-native/ReactCommon/callinvoker`)
+  - RCT-Folly (from `../packages/home/node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
+  - RCTRequired (from `../packages/home/node_modules/react-native/Libraries/RCTRequired`)
+  - RCTTypeSafety (from `../packages/home/node_modules/react-native/Libraries/TypeSafety`)
+  - React (from `../packages/home/node_modules/react-native/`)
+  - React-callinvoker (from `../packages/home/node_modules/react-native/ReactCommon/callinvoker`)
   - React-Codegen (from `build/generated/ios`)
-  - React-Core (from `../node_modules/react-native/`)
-  - React-Core/RCTWebSocket (from `../node_modules/react-native/`)
-  - React-CoreModules (from `../node_modules/react-native/React/CoreModules`)
-  - React-cxxreact (from `../node_modules/react-native/ReactCommon/cxxreact`)
-  - React-debug (from `../node_modules/react-native/ReactCommon/react/debug`)
-  - React-hermes (from `../node_modules/react-native/ReactCommon/hermes`)
-  - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
-  - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
-  - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
-  - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
-  - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
-  - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
-  - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
-  - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
-  - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
-  - React-RCTAppDelegate (from `../node_modules/react-native/Libraries/AppDelegate`)
-  - React-RCTBlob (from `../node_modules/react-native/Libraries/Blob`)
-  - React-RCTImage (from `../node_modules/react-native/Libraries/Image`)
-  - React-RCTLinking (from `../node_modules/react-native/Libraries/LinkingIOS`)
-  - React-RCTNetwork (from `../node_modules/react-native/Libraries/Network`)
-  - React-RCTSettings (from `../node_modules/react-native/Libraries/Settings`)
-  - React-RCTText (from `../node_modules/react-native/Libraries/Text`)
-  - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
-  - React-rncore (from `../node_modules/react-native/ReactCommon`)
-  - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
-  - React-runtimescheduler (from `../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
-  - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
-  - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
-  - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
-  - RNScreens (from `../node_modules/react-native-screens`)
-  - RNSVG (from `../node_modules/react-native-svg`)
-  - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
+  - React-Core (from `../packages/home/node_modules/react-native/`)
+  - React-Core/RCTWebSocket (from `../packages/home/node_modules/react-native/`)
+  - React-CoreModules (from `../packages/home/node_modules/react-native/React/CoreModules`)
+  - React-cxxreact (from `../packages/home/node_modules/react-native/ReactCommon/cxxreact`)
+  - React-debug (from `../packages/home/node_modules/react-native/ReactCommon/react/debug`)
+  - React-hermes (from `../packages/home/node_modules/react-native/ReactCommon/hermes`)
+  - React-jsi (from `../packages/home/node_modules/react-native/ReactCommon/jsi`)
+  - React-jsiexecutor (from `../packages/home/node_modules/react-native/ReactCommon/jsiexecutor`)
+  - React-jsinspector (from `../packages/home/node_modules/react-native/ReactCommon/jsinspector`)
+  - React-logger (from `../packages/home/node_modules/react-native/ReactCommon/logger`)
+  - react-native-safe-area-context (from `../packages/home/node_modules/react-native-safe-area-context`)
+  - React-NativeModulesApple (from `../packages/home/node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
+  - React-perflogger (from `../packages/home/node_modules/react-native/ReactCommon/reactperflogger`)
+  - React-RCTActionSheet (from `../packages/home/node_modules/react-native/Libraries/ActionSheetIOS`)
+  - React-RCTAnimation (from `../packages/home/node_modules/react-native/Libraries/NativeAnimation`)
+  - React-RCTAppDelegate (from `../packages/home/node_modules/react-native/Libraries/AppDelegate`)
+  - React-RCTBlob (from `../packages/home/node_modules/react-native/Libraries/Blob`)
+  - React-RCTImage (from `../packages/home/node_modules/react-native/Libraries/Image`)
+  - React-RCTLinking (from `../packages/home/node_modules/react-native/Libraries/LinkingIOS`)
+  - React-RCTNetwork (from `../packages/home/node_modules/react-native/Libraries/Network`)
+  - React-RCTSettings (from `../packages/home/node_modules/react-native/Libraries/Settings`)
+  - React-RCTText (from `../packages/home/node_modules/react-native/Libraries/Text`)
+  - React-RCTVibration (from `../packages/home/node_modules/react-native/Libraries/Vibration`)
+  - React-rncore (from `../packages/home/node_modules/react-native/ReactCommon`)
+  - React-runtimeexecutor (from `../packages/home/node_modules/react-native/ReactCommon/runtimeexecutor`)
+  - React-runtimescheduler (from `../packages/home/node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
+  - React-utils (from `../packages/home/node_modules/react-native/ReactCommon/react/utils`)
+  - ReactCommon/turbomodule/core (from `../packages/home/node_modules/react-native/ReactCommon`)
+  - RNGestureHandler (from `../packages/home/node_modules/react-native-gesture-handler`)
+  - RNScreens (from `../packages/home/node_modules/react-native-screens`)
+  - RNSVG (from `../packages/home/node_modules/react-native-svg`)
+  - Yoga (from `../packages/home/node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
@@ -492,98 +492,98 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   boost:
-    :podspec: "../node_modules/react-native/third-party-podspecs/boost.podspec"
+    :podspec: "../packages/home/node_modules/react-native/third-party-podspecs/boost.podspec"
   DoubleConversion:
-    :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
+    :podspec: "../packages/home/node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   FBLazyVector:
-    :path: "../node_modules/react-native/Libraries/FBLazyVector"
+    :path: "../packages/home/node_modules/react-native/Libraries/FBLazyVector"
   FBReactNativeSpec:
-    :path: "../node_modules/react-native/React/FBReactNativeSpec"
+    :path: "../packages/home/node_modules/react-native/React/FBReactNativeSpec"
   glog:
-    :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
+    :podspec: "../packages/home/node_modules/react-native/third-party-podspecs/glog.podspec"
   hermes-engine:
-    :podspec: "../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec"
+    :podspec: "../packages/home/node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec"
     :tag: hermes-2023-08-07-RNv0.72.4-813b2def12bc9df02654b3e3653ae4a68d0572e0
   RCT-Folly:
-    :podspec: "../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec"
+    :podspec: "../packages/home/node_modules/react-native/third-party-podspecs/RCT-Folly.podspec"
   RCTRequired:
-    :path: "../node_modules/react-native/Libraries/RCTRequired"
+    :path: "../packages/home/node_modules/react-native/Libraries/RCTRequired"
   RCTTypeSafety:
-    :path: "../node_modules/react-native/Libraries/TypeSafety"
+    :path: "../packages/home/node_modules/react-native/Libraries/TypeSafety"
   React:
-    :path: "../node_modules/react-native/"
+    :path: "../packages/home/node_modules/react-native/"
   React-callinvoker:
-    :path: "../node_modules/react-native/ReactCommon/callinvoker"
+    :path: "../packages/home/node_modules/react-native/ReactCommon/callinvoker"
   React-Codegen:
     :path: build/generated/ios
   React-Core:
-    :path: "../node_modules/react-native/"
+    :path: "../packages/home/node_modules/react-native/"
   React-CoreModules:
-    :path: "../node_modules/react-native/React/CoreModules"
+    :path: "../packages/home/node_modules/react-native/React/CoreModules"
   React-cxxreact:
-    :path: "../node_modules/react-native/ReactCommon/cxxreact"
+    :path: "../packages/home/node_modules/react-native/ReactCommon/cxxreact"
   React-debug:
-    :path: "../node_modules/react-native/ReactCommon/react/debug"
+    :path: "../packages/home/node_modules/react-native/ReactCommon/react/debug"
   React-hermes:
-    :path: "../node_modules/react-native/ReactCommon/hermes"
+    :path: "../packages/home/node_modules/react-native/ReactCommon/hermes"
   React-jsi:
-    :path: "../node_modules/react-native/ReactCommon/jsi"
+    :path: "../packages/home/node_modules/react-native/ReactCommon/jsi"
   React-jsiexecutor:
-    :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
+    :path: "../packages/home/node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
-    :path: "../node_modules/react-native/ReactCommon/jsinspector"
+    :path: "../packages/home/node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
-    :path: "../node_modules/react-native/ReactCommon/logger"
+    :path: "../packages/home/node_modules/react-native/ReactCommon/logger"
   react-native-safe-area-context:
-    :path: "../node_modules/react-native-safe-area-context"
+    :path: "../packages/home/node_modules/react-native-safe-area-context"
   React-NativeModulesApple:
-    :path: "../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios"
+    :path: "../packages/home/node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios"
   React-perflogger:
-    :path: "../node_modules/react-native/ReactCommon/reactperflogger"
+    :path: "../packages/home/node_modules/react-native/ReactCommon/reactperflogger"
   React-RCTActionSheet:
-    :path: "../node_modules/react-native/Libraries/ActionSheetIOS"
+    :path: "../packages/home/node_modules/react-native/Libraries/ActionSheetIOS"
   React-RCTAnimation:
-    :path: "../node_modules/react-native/Libraries/NativeAnimation"
+    :path: "../packages/home/node_modules/react-native/Libraries/NativeAnimation"
   React-RCTAppDelegate:
-    :path: "../node_modules/react-native/Libraries/AppDelegate"
+    :path: "../packages/home/node_modules/react-native/Libraries/AppDelegate"
   React-RCTBlob:
-    :path: "../node_modules/react-native/Libraries/Blob"
+    :path: "../packages/home/node_modules/react-native/Libraries/Blob"
   React-RCTImage:
-    :path: "../node_modules/react-native/Libraries/Image"
+    :path: "../packages/home/node_modules/react-native/Libraries/Image"
   React-RCTLinking:
-    :path: "../node_modules/react-native/Libraries/LinkingIOS"
+    :path: "../packages/home/node_modules/react-native/Libraries/LinkingIOS"
   React-RCTNetwork:
-    :path: "../node_modules/react-native/Libraries/Network"
+    :path: "../packages/home/node_modules/react-native/Libraries/Network"
   React-RCTSettings:
-    :path: "../node_modules/react-native/Libraries/Settings"
+    :path: "../packages/home/node_modules/react-native/Libraries/Settings"
   React-RCTText:
-    :path: "../node_modules/react-native/Libraries/Text"
+    :path: "../packages/home/node_modules/react-native/Libraries/Text"
   React-RCTVibration:
-    :path: "../node_modules/react-native/Libraries/Vibration"
+    :path: "../packages/home/node_modules/react-native/Libraries/Vibration"
   React-rncore:
-    :path: "../node_modules/react-native/ReactCommon"
+    :path: "../packages/home/node_modules/react-native/ReactCommon"
   React-runtimeexecutor:
-    :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
+    :path: "../packages/home/node_modules/react-native/ReactCommon/runtimeexecutor"
   React-runtimescheduler:
-    :path: "../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler"
+    :path: "../packages/home/node_modules/react-native/ReactCommon/react/renderer/runtimescheduler"
   React-utils:
-    :path: "../node_modules/react-native/ReactCommon/react/utils"
+    :path: "../packages/home/node_modules/react-native/ReactCommon/react/utils"
   ReactCommon:
-    :path: "../node_modules/react-native/ReactCommon"
+    :path: "../packages/home/node_modules/react-native/ReactCommon"
   RNGestureHandler:
-    :path: "../node_modules/react-native-gesture-handler"
+    :path: "../packages/home/node_modules/react-native-gesture-handler"
   RNScreens:
-    :path: "../node_modules/react-native-screens"
+    :path: "../packages/home/node_modules/react-native-screens"
   RNSVG:
-    :path: "../node_modules/react-native-svg"
+    :path: "../packages/home/node_modules/react-native-svg"
   Yoga:
-    :path: "../node_modules/react-native/ReactCommon/yoga"
+    :path: "../packages/home/node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  boost: d9857fa6515e4f9985f29bf6f2e40cb03f54f859
+  boost: dd4accc065142a20eaec78d570e8c9a843cf1192
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
   FBLazyVector: 748c0ef74f2bf4b36cfcccf37916806940a64c32
-  FBReactNativeSpec: 966f29e4e697de53a3b366355e8f57375c856ad9
+  FBReactNativeSpec: 9b708ff6678a382bfef3d1f20010683f402a4455
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   hermes-engine: 8057e75cfc1437b178ac86c8654b24e7fead7f60
@@ -616,7 +616,7 @@ SPEC CHECKSUMS:
   React-RCTSettings: 4f3a29a6d23ffa639db9701bc29af43f30781058
   React-RCTText: adde32164a243103aaba0b1dc7b0a2599733873e
   React-RCTVibration: 6bd85328388ac2e82ae0ca11afe48ad5555b483a
-  React-rncore: fda7b1ae5918fa7baa259105298a5487875a57c8
+  React-rncore: c7e1c8958323faa21fc34a5a7f574867ef70c67a
   React-runtimeexecutor: 57d85d942862b08f6d15441a0badff2542fd233c
   React-runtimescheduler: 8d48e9f0cf62099f501fcd52234240006fa12c8f
   React-utils: ee4e6bf16d6882500500d517d36f9035874c5f6a
@@ -627,6 +627,6 @@ SPEC CHECKSUMS:
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: b76f1acfda8212aa16b7e26bcce3983230c82603
 
-PODFILE CHECKSUM: b50886a8b98c86a6cbd9b69bb29e21e0fd33f092
+PODFILE CHECKSUM: 5c1441790679826d6718facac87e43bdb892094a
 
 COCOAPODS: 1.16.2

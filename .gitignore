@@ -1,9 +1,14 @@
+# Dependencies
 node_modules/
+packages/*/node_modules/
+
+# iOS
 ios/Pods/
 ios/build/
+ios/bundles/
+*.xcuserstate
 
-npm-debug.log
-
+# Yarn
 .yarn/*
 .pnp.*
 yarn-error.log
@@ -13,7 +18,36 @@ yarn-error.log
 !.yarn/sdks
 !.yarn/versions
 
+# Granite
+.granite/
+packages/*/.granite/
+.swc/
+
+# Environment
 .env
-.granite
-.swc
+.env.local
+.env.production
+
+# Build outputs
+dist/
+packages/*/dist/
+build/
+
+# Logs
+npm-debug.log
+*.log
+logs/
+
+# System
 .DS_Store
+Thumbs.db
+
+# IDE
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp

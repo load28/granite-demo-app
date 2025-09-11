@@ -10,7 +10,7 @@ import UIKit
 
 struct ContentView: View {
     
-    @State private var isGraniteInitialized = false
+    @State private var isGraniteInitialized = true // GraniteModuleManager는 즉시 사용 가능
     
     var body: some View {
         NavigationView {
@@ -22,69 +22,103 @@ struct ContentView: View {
                 Text("iOS 네이티브 앱")
                     .font(.title)
                 
-                if isGraniteInitialized {
-                    Text("✅ Granite 초기화 완료")
-                        .foregroundColor(.green)
-                } else {
-                    Text("⏳ Granite 초기화 중...")
-                        .foregroundColor(.orange)
-                }
+                Text("✅ Granite 모노레포 준비완료")
+                    .foregroundColor(.green)
+                
+                Text("활성 모듈: \(GraniteModuleManager.shared.getActiveModules().joined(separator: ", "))")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
                 
                 VStack(spacing: 12) {
-                    Button("Granite RN 앱 열기") {
-                        openGraniteApp()
+                    // Home 앱 버튼들
+                    HStack(spacing: 12) {
+                        Button("Home") {
+                            openGraniteModule(.home)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        
+                        Button("Home (모달)") {
+                            openGraniteModuleModally(.home)
+                        }
+                        .buttonStyle(.bordered)
                     }
-                    .buttonStyle(.borderedProminent)
-                    .disabled(!isGraniteInitialized)
                     
-                    Button("Granite RN 앱 (모달)") {
-                        openGraniteAppModally()
+                    // Login 앱 버튼들
+                    HStack(spacing: 12) {
+                        Button("Login") {
+                            openGraniteModule(.login)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        
+                        Button("Login (모달)") {
+                            openGraniteModuleModally(.login)
+                        }
+                        .buttonStyle(.bordered)
                     }
-                    .buttonStyle(.bordered)
-                    .disabled(!isGraniteInitialized)
+                    
+                    // Profile 앱 버튼들
+                    HStack(spacing: 12) {
+                        Button("Profile") {
+                            openGraniteModule(.profile)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        
+                        Button("Profile (모달)") {
+                            openGraniteModuleModally(.profile)
+                        }
+                        .buttonStyle(.bordered)
+                    }
+                    
+                    Divider()
+                    
+                    // 관리 버튼들
+                    HStack(spacing: 12) {
+                        Button("모든 모듈 정리") {
+                            cleanupAllModules()
+                        }
+                        .buttonStyle(.bordered)
+                        .foregroundColor(.red)
+                    }
                 }
             }
             .padding()
-            .navigationTitle("메인화면")
-        }
-        .onAppear {
-            initializeGranite()
+            .navigationTitle("Granite 모노레포")
         }
     }
     
     // MARK: - Private Methods
     
-    private func initializeGranite() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            GraniteManager.shared.initialize()
-            isGraniteInitialized = GraniteManager.shared.isReady()
-        }
+    /**
+     * 특정 Granite 모듈을 네비게이션으로 열기
+     */
+    private func openGraniteModule(_ module: GraniteModuleManager.GraniteModule) {
+        let initialProps: [String: Any] = [
+            "userId": "ios_user_\(UUID().uuidString.prefix(8))",
+            "source": "native_app_navigation",
+            "module": module.rawValue
+        ]
+        
+        GraniteModuleManager.shared.pushModule(module, initialProperties: initialProps)
     }
     
-    private func openGraniteApp() {
-        if let viewController = UIApplication.shared.topViewController {
-            viewController.showGraniteApp(
-                appName: "rn",
-                scheme: "granite://rn",
-                initialProps: [
-                    "userId": "ios_user_123",
-                    "source": "native_app"
-                ]
-            )
-        }
+    /**
+     * 특정 Granite 모듈을 모달로 열기
+     */
+    private func openGraniteModuleModally(_ module: GraniteModuleManager.GraniteModule) {
+        let initialProps: [String: Any] = [
+            "userId": "ios_user_\(UUID().uuidString.prefix(8))",
+            "source": "native_app_modal",
+            "module": module.rawValue
+        ]
+        
+        GraniteModuleManager.shared.presentModule(module, initialProperties: initialProps)
     }
     
-    private func openGraniteAppModally() {
-        if let viewController = UIApplication.shared.topViewController {
-            viewController.showGraniteAppModally(
-                appName: "rn",
-                scheme: "granite://rn",
-                initialProps: [
-                    "userId": "ios_user_456",
-                    "source": "native_app_modal"
-                ]
-            )
-        }
+    /**
+     * 모든 활성 모듈 정리
+     */
+    private func cleanupAllModules() {
+        GraniteModuleManager.shared.destroyAllModules()
     }
 }
 
